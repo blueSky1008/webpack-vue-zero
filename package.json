@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "lint": "echo \"请使用 ESLint 实现此任务\""
+    "lint": "eslint --ext .js,.vue src",
+    "lintfix": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -15,10 +16,19 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@vue/cli-plugin-babel": "^4.5.8",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^5.0.0",
+    "eslint": "^7.12.0",
+    "eslint-config-standard": "^15.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "eslint-plugin-vue": "^7.1.0",
     "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
     "less": "^3.12.2",
@@ -32,20 +42,6 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^5.2.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",

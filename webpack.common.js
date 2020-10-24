@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // 配合 vue-loader 使用，用于编译转换 .vue 文件
 const webpack = require('webpack')
 const path = require('path')
 
@@ -23,6 +23,12 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
+      },
+      {
+        test: /.(js|vue)$/,
+        use: 'eslint-loader',
+        enforce: 'pre', // 编译前检查
+        exclude:/(node_modules)/
       },
       {
         test: /.css$/,
